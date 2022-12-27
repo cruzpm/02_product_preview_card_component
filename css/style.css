@@ -1,0 +1,166 @@
+:root {
+    /* Declaración de variables */
+    /* ### Primary Colors */
+    --darkCyan: hsl(158, 36%, 37%);
+    --activeButton: hsl(158, 42%, 18%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* ### Neutral Colors*/
+
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --monserrat: 'Montserrat', sans-serif;
+    --fraunces: 'Fraunces', serif;
+
+    --background-color : hsl(26,40%,92%);
+}
+
+
+html {
+    /* para hacer que 1rem = 10 px */
+    font-size: 62.5%;
+    /*Snippet de https://www-paulirish-com.translate.goog/2012/box-sizing-border-box-ftw/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc*/
+    /* inicio Snippet modelo caja de: www-paulirish-com */
+    box-sizing: border-box;
+    /* fin  Snippet modelo caja : www-paulirish-com*/
+}
+
+/*Snippet de https://www-paulirish-com.translate.goog/2012/box-sizing-border-box-ftw/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc*/
+/* inicio Snippet modelo caja de: www-paulirish-com */
+/*
+ eel primer "*" indica que seleccione todos los elementos del html y a esos se les aplicara el box-sizing : ingherit
+ al cual el padding, el margen y el borde se tomara dekk width declarado, es decir si declaras 200 de width
+ y tambien le defines un pading de 20px el elemento seguira midiendo 200 sin importar cuanto aumente el padding o el border
+*/
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* fin  Snippet modelo caja : www-paulirish-com*/
+
+/* ### Body Copy
+- Font size (paragraph): 14px
+ */
+p {
+    font-size: 1.8rem;
+}
+body {
+    background-color: var(--background-color)
+}
+
+/* Clases personalizadas */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1.8rem;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+@media (min-width: 468px) {
+    .card {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: row;
+        /* border-radius: 1.8rem; */
+        /* overflow: hidden; */
+        /* background-color: var(--white); */
+    }
+    
+}
+
+.card__img img {
+    content: url('../images/image-product-mobile.jpg');
+    width: 35rem;
+    display: block;
+    
+}
+@media (min-width: 468px) {
+    .card__img img {
+        content: url('../images/image-product-desktop.jpg');
+        height: 450px;
+    }
+}
+
+
+.card__info {
+    /* padding-left: 3.5rem;
+    padding-top: 2rem; */
+    padding: 2rem 3.0rem;
+    width: 350px;
+}
+@media (min-width: 468px) {
+    .card__info {
+        padding: 2rem 3.5rem;
+        width: 300px;
+    }
+}
+
+.card__info__product-type {
+    font-size: 1.2rem;
+    font-family: var(--monserrat);
+    letter-spacing: .7rem;
+    color: var(--veryDarkBlue);
+    
+}
+.card__info___product-title {
+    font-family: var(--fraunces);
+    font-size: 3.5rem;
+    line-height: 1;
+}
+/*@media (min-width: 768px) {
+    .card__info___product-title {
+        font-size: 3.5rem;
+
+    }
+}*/
+.card__info___product-description {
+    color: var(--darkGrayishBlue);
+    font-size: 1.5rem;
+    font-family: var(--monserrat);
+    line-height: 1.5;
+}
+.card__info___product-price {
+    font-family: var(--fraunces);
+    font-size: 3rem;
+    color: var(--darkCyan);
+    
+}
+.card__info___product-price span {
+    font-family: var(--monserrat);
+    margin-left: 1.8rem;
+    font-size: 1.3rem;
+    text-decoration: line-through;
+    vertical-align: super;
+    color: var(--darkGrayishBlue);
+}
+
+.card__button {
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    background-color: var(--darkCyan);
+    color: var(--white);
+    font-family: var(--monserrat);
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    padding: 1.5rem 2.5rem;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+}
+
+.boton:hover {
+    background-color: var(--activeButton);
+}
